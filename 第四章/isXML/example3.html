@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isXML</title>
+</head>
+<body>
+	<script>
+		//功能法，通过判断创建的元素的nodeName是区分大小写还是不区分大小写来判定文档是html还是xml
+		//（html不区分大小写，xml区分大小写）
+		var isXML = function(doc) {
+		    return doc.createElement("p").nodeName !== doc.createElement("P").nodeName;
+		}
+		console.log(isXML(document));
+	</script>
+</body>
+</html>

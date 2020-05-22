@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>contains</title>
+</head>
+<body>
+	<div id="p-node">
+		<div id="c-node">子节点内容</div>
+	</div>
+
+	<script>
+		//对所有的节点类型和所有的浏览器都是兼容的，能够弥补contains方法在一些浏览器中不兼容的问题
+		function fixContains(a, b) {
+		    try {
+		        while ((b = b.parentNode)){
+					console.log(b);
+		            if (b === a){
+		                return true;
+		            }
+		        }
+		        return false;
+		    } catch (e) {
+		        return false;
+		    }
+		}
+		var pNode = document.getElementById("p-node");
+		var cNode = document.getElementById("c-node").childNodes[0];
+		//console.log(document.getElementById("c-node").parentNode);
+		console.log(fixContains(pNode, cNode));
+		console.log(fixContains(document, cNode));
+	</script>
+</body>
+</html>

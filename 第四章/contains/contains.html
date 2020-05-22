@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>contains</title>
+</head>
+<body>
+	<div id="p-node">
+		<div id="c-node">子节点内容
+		</div>
+	</div>
+	<script>
+		var pNode = document.getElementById("p-node");
+		//var cNode = document.getElementById("c-node");
+		var cNode = document.getElementById("c-node").childNodes[0];
+		console.log(cNode);
+		console.log(pNode.contains(cNode));//若返回值是true，则说明pNode包含cNode；两个节点必须是元素节点！！
+		//chrome里面的document有contains方法，所以返回true；IE里面的document没有contains方法，所以返回false
+		console.log(document.contains(cNode))//chrome里面的document有contains方法，所以返回true
+	</script>
+</body>
+</html>
